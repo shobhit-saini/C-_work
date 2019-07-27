@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str1,str2,str;
+    getline (cin, str1); 
+    getline (cin, str2); 
+    int len1=str1.size();
+    int len2=str2.size();
+    cout<<len1<<" "<<len2<<endl;
+    str=str1+str2;
+    cout<<str<<endl;
+    char temp=str1[0];
+    str1[0]=str2[0];
+    str2[0]=temp;
+    cout<<str1<<" "<<str2;
+  
+    return 0;
+}
+
