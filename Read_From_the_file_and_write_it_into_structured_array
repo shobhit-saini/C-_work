@@ -1,0 +1,34 @@
+#include <iostream>
+#include<fstream>
+#include<sstream>
+using namespace std;
+struct stud
+{
+	string name;
+	string roll_no;
+	string department; 
+};
+int main()
+{
+  ifstream Myfile("abc.txt");
+  if(!Myfile.is_open())
+  {
+  	cout<<"File  can't be open";
+  }
+  int i=0;
+  struct stud arr[100];
+  string line;
+  while(getline(Myfile,line))
+  {
+  	stringstream ss(line);
+  	getline(ss,arr[i].name,',');
+  	getline(ss,arr[i].roll_no,',');
+  	getline(ss,arr[i].department,'\n');
+  	i++;
+  }
+  for(i=0;i<2;i++)
+  {
+  	cout<<arr[i].name<<" "<<arr[i].roll_no<<" "<<arr[i].department<<endl;
+  }
+  Myfile.close();
+}
