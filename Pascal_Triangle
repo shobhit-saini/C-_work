@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int row,i,j,a,val;
+    cout<<"Enter the No. of rows:";
+    cin>>row;
+    for(i=1;i<=row;i++)
+    {
+        a=1;
+        for(j=1;j<=i;j++)
+        {
+            cout<<a<<" ";
+            a=a*((i-j))/j;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
