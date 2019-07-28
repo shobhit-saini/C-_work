@@ -1,0 +1,18 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main()
+{
+    char arr[100],arr1[100];
+    cin.getline(arr,100);
+    ofstream file("abc.txt",ios::app);
+    file<<arr;
+    file.close();
+    cout<<"File write operations successfully";
+    ifstream file1("abc.txt");
+    file1.getline(arr1,100);
+    cout<<endl<<"File content:"<<arr1;
+    file1.close();
+    return 0;
+}
