@@ -5,24 +5,26 @@ class person
 	int age;
 	char name[30];
 	public:
-		void getdata()
-		{
-			cout<<"Enter the name:";
-			cin>>name;
-			cout<<"\nEnter age:";
-			cin>>age;
-		}
-		void displaydata()
-		{
-			cout<<"Name:"<<name;
-			cout<<"\nAge:"<<age;
-		}
+		void getdata();
+		void displaydata();
 	
 };
-	int main()
+	void person::getdata()
 	{
-		person p;
-		p.getdata();
-		p.displaydata();
-	return 0;
+		cout<<"Enter the name:";
+		cin>>name;
+		cout<<"\nEnter age:";
+		cin>>age;	
 	}
+	void person::displaydata()
+	{
+		cout<<"Name:"<<name;
+		cout<<"\nAge:"<<age;
+	}
+int main()
+{
+person p;
+p.getdata();
+p.displaydata();
+return 0;
+}
