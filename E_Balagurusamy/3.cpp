@@ -23,8 +23,8 @@ class person
 	}
 int main()
 {
-person p;
-p.getdata();
-p.displaydata();
-return 0;
+	person p;
+	p.getdata();
+	p.displaydata();
+	return 0;
 }
