@@ -8,7 +8,6 @@ using namespace std;
 		public:
 			Graph(int V);//constructor
 			void addedge(int v,int w);//Function to add an edge to the graph
-			void BFS(int s);//Print the BFS traversal from the starting point s	
 			void Print_List();	
 	};
 	Graph::Graph(int V)
@@ -18,14 +17,19 @@ using namespace std;
 	}
 	void Graph::addedge(int v,int w)
 	{
-		adj[v].push_back(w);//add w to v's list
+		adj[v - 1].push_back(w);//add w to v's list
 	}
 	void Graph::Print_List()
 	{
 		list<int>::iterator it;
-		for(it = adj.begin();it != adj.end;it++)
+		for(int i = 0; i < V; i++)
 		{
-			cout<<*it;
+			cout<<(i+1)<<"->";
+			for(it = adj[i].begin();it != adj[i].end(); it++)
+			{
+				cout<<*it<<" ";
+			}
+			cout<<"\n";
 		}
 	}
 int main()
@@ -38,5 +42,7 @@ int main()
 	g.addedge(1,3);
 	g.addedge(1,4);
 	g.addedge(2,3);
-	g.Print_List();	
+	g.addedge(4,3);
+	g.Print_List();
+	
 }
