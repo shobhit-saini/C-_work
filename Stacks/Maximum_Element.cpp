@@ -13,3 +13,40 @@ int main() {
     stack<int> st;  
     stack<int> max_st;
     cin>> N;
+    while(i < N)
+    {
+        cin>> options;
+        switch(options)
+        {
+            case 1: 
+                cin>> ele;
+                st.push(ele);
+                if(max_st.empty())
+                {
+                    max_st.push(ele);
+                }
+                else if( ele >= max_st.top())
+                {
+                    max_st.push(ele);
+                }
+                break;
+            
+            case 2:
+                if( st.top() == max_st.top())
+                {
+                    max_st.pop();
+                }
+                st.pop();
+                break;
+
+            case 3:
+                x = max_st.top();
+                cout<<x<<"\n";
+                break;
+
+        }
+            i++;
+    } 
+    return 0;
+}
+
