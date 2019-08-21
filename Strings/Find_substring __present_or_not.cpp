@@ -9,6 +9,7 @@ int main()
 	cin>>s;
 	cout<<"Enter the another string:";
 	cin>>t;
+	
 	for(i = 0; i < strlen(s.c_str()); i++)
 	{
 		k = 0;
@@ -23,12 +24,14 @@ int main()
 				break;
 			}
 		}
+		
 		if(k ==  strlen(t.c_str())-1)
 		{
 			cout<< "substring found";
 			return 0;
 		}
 	}
+	
 	cout<<"substring not found!!!!!!!";
 	return 0;
 }
