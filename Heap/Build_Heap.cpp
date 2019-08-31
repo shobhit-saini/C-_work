@@ -1,4 +1,4 @@
-int Build_heap(int *ar, int low, int high)
+int Build_heap(int *ar, int high)
 {
 	int  temp = 0, i = 0;
 	for(i = floor(high/2) - 1; i >= 0; i--)
