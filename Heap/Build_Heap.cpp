@@ -1,7 +1,10 @@
 #include<iostream>
+#include<conio.h>
+#include<stdio.h>
 #include<Math.h>
 using namespace std;
 
+//Structure for storing Alphabet and it's frequency, left pointer and right pointer
 struct Huffman
 {
 	char data;
@@ -10,6 +13,7 @@ struct Huffman
 	struct Huffman *right;
 };
 
+//Swapping two structure type variable
 int Swap(struct Huffman *a, struct Huffman *b)
 {
 	struct Huffman temp;
@@ -18,23 +22,17 @@ int Swap(struct Huffman *a, struct Huffman *b)
 	*b = temp;
 }
 
+//Building the Heap 
 int Build_heap(struct Huffman *ar, int high)
 {
 	int  temp = 0, i = 0, j = 0;
-	if(high == 2)
-	{
-		if(ar[i].frequency > ar[2*i + 1].frequency)
-		{
-			Swap(&ar[i], &ar[2*i + 1]);
-		}
-	}
-	else
-	{
 	
+	//For loop from those elements who have atleast one child from bottom
 		for(i = floor(high/2) - 1; i >= 0; i--)
 		{
 			j = i;
 			
+			//Heapify from Top
 			while(j <= floor(high/2) - 1)
 			{
 				if((2*j +2 < high))
@@ -70,7 +68,7 @@ int Build_heap(struct Huffman *ar, int high)
 				}
 			}
 		}
-	}
+	
 return 0;
 }
 	int main()
@@ -80,7 +78,6 @@ return 0;
 		cin >> N;
 		struct Huffman ar[2*N];
 		cout << "Enter the character and it's frequency:";
-		
 		for(i = 0; i < N; i++)
 		{
 			cin >> ar[i].data;
