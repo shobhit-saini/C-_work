@@ -34,6 +34,7 @@ int Build_heap(struct Huffman *ar, int high)
 		for(i = floor(high/2) - 1; i >= 0; i--)
 		{
 			j = i;
+			
 			while(j <= floor(high/2) - 1)
 			{
 				if((2*j +2 < high))
