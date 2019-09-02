@@ -1,13 +1,15 @@
-int Extract_min(int *ar, int high)
+int Extract_min(struct Huffman *ar, int high)
 {
 	int i = 0;
-	Swap (&ar[0], &ar[high - 1]);
+	Swap(&ar[0], &ar[high - 1]);
+	
 	high = high - 1;
+	
 	while(i <= (high/2)-1)
 	{
-		if(ar[i] >ar[2*i + 1] || ar[i] > ar[2*i + 2])
+		if(ar[i].frequency >ar[2*i + 1].frequency || ar[i].frequency > ar[2*i + 2].frequency)
 		{
-			if(ar[2*i + 1] < ar[2*i + 2])
+			if(ar[2*i + 1].frequency < ar[2*i + 2].frequency)
 			{
 				Swap(&ar[i], &ar[2*i + 1]);
 				i = 2*i +1;
@@ -24,5 +26,4 @@ int Extract_min(int *ar, int high)
 		}
 	}
 return high;
-
 }
